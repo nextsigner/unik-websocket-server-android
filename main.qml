@@ -36,7 +36,12 @@ ApplicationWindow{
         property real visibility
     }
     FontLoader {name: "FontAwesome";source: "qrc:/fontawesome-webfont.ttf";}
-    UnikamView{id:uwss}
+    Item{
+        id: xApp
+        anchors.fill: parent
+        UnikamView{id:uwss}
+    }
+
     /*LogView{
         id:logView
         width: parent.width
