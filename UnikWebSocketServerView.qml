@@ -10,7 +10,7 @@ Item {
     property string serverName: 'chatserver'
     property var container: xQmlObjects
     Component.onCompleted:{
-        var appArgs = Qt.application.arguments
+        /*var appArgs = Qt.application.arguments
         for(var i=0;i<appArgs.length;i++){
             console.log('------------------->'+appArgs[i])
             var arg=''+appArgs[i]
@@ -19,13 +19,21 @@ Item {
                 r.ip=m0[1]
             }
         }
-        unik.initWebSocketServer(r.ip, r.port, r.serverName);
+        unik.initWebSocketServer(r.ip, r.port, r.serverName);*/
         //listModelUser.updateUserList()
+        unik.startWSS('192.168.1.64', 1234,'chatserver');
     }
     Item {
         id: xQmlObjects
         anchors.fill: r
     }
+    /*Connections {
+        id:connCWSS
+        target: unik
+        onClientConnected:{
+            console.log("A new client connected.")
+        }
+    }*/
     Connections {
         id:connCW
         //target: cw
