@@ -9,6 +9,7 @@ Item {
     property int port: 12345
     property string serverName: 'chatserver'
     property var container: xQmlObjects
+    property bool connexted:false
     Component.onCompleted:{
         /*var appArgs = Qt.application.arguments
         for(var i=0;i<appArgs.length;i++){
@@ -21,11 +22,36 @@ Item {
         }
         unik.initWebSocketServer(r.ip, r.port, r.serverName);*/
         //listModelUser.updateUserList()
-        unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
+        //unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
     }
     Item {
         id: xQmlObjects
         anchors.fill: r
+    }
+    Rectangle{
+        anchors.fill: r
+        color: r.connexted?'red':'green'
+    }
+    Text{
+        id: txtStatus
+        font.pixelSize: 20
+        color: 'white'
+        width: r.width-10
+        wrapMode: Text.WordWrap
+        anchors.centerIn: r
+        Timer{
+            running: true
+            repeat: true
+            interval: 3000
+            onTriggered: {
+                if(wss){
+                    r.connexted=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
+                    txtStatus.text='WSS'
+                }else{
+                    txtStatus.text='NO wss'
+                }
+            }
+        }
     }
     /*Connections {
         id:connCWSS
