@@ -12,12 +12,6 @@ Item {
     Component.onCompleted:{
         unik.startWSS('192.168.200.2', 5500,'chatserver');
     }
-    Rectangle{
-        width: 100
-        height: 100
-        anchors.centerIn: r
-        color: 'green'
-    }
     Item {
         id: xQmlObjects
         anchors.fill: r
@@ -34,7 +28,7 @@ Item {
         id:connCW
         //target: cw
         onClientConnected:{
-            unik.log("A new client connected.")
+            //unik.log("A new client connected.")
             //console.log("A new client connected.")
         }
     }
@@ -45,7 +39,7 @@ Item {
         onTriggered: {
             if(cw){
                 connCW.target=cw
-                //stop()
+                stop()
             }
         }
     }

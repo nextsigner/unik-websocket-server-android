@@ -11,7 +11,7 @@ ApplicationWindow{
     width: 800
     height: 600
     visibility: 'FullScreen'
-    color: '#33ffdd'
+    color: 'black'
     property string moduleName: 'unik-websocket-server-android'
     property int altoBarra: 0
     property int fs: appSettings.fs
