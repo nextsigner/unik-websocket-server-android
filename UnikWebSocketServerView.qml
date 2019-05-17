@@ -21,7 +21,7 @@ Item {
         }
         unik.initWebSocketServer(r.ip, r.port, r.serverName);*/
         //listModelUser.updateUserList()
-        unik.startWSS('192.168.1.61', 12345,'chatserver');
+        unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
     }
     Item {
         id: xQmlObjects
