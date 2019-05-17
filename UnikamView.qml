@@ -16,7 +16,7 @@ Item {
         width: 100
         height: 100
         anchors.centerIn: r
-        color: 'red'
+        color: 'green'
     }
     Item {
         id: xQmlObjects
@@ -63,8 +63,8 @@ Item {
             //unik.log('-------->'+user+':::"'+unik.base64ToByteArray(msg)+'"')
             //unik.setFile('/tmp/wss2.ogg', unik.base64ToByteArray(msg))
             //unik.appendAudioStreamFileWSS('/tmp/streamOutPut--'+v+'.ogg', msg)
-            v++
-            return
+            //v++
+            //return
             /*if((''+msg).substring(0,6).indexOf('audio')>=0){
                 unik.appendAudioStreamFileWSS('/tmp/streamOutPut.ogg', (''+msg).substring(5, (''+msg).length-2))
                 unik.log('-------->'+(''+msg).substring(5, (''+msg).length-2))
