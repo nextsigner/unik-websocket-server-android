@@ -11,7 +11,7 @@ ApplicationWindow{
     width: 800
     height: 600
     visibility: 'FullScreen'
-    color: '#332233'
+    color: '#3322ff'
     property string moduleName: 'unik-websocket-server-android'
     property int altoBarra: 0
     property int fs: appSettings.fs
@@ -36,16 +36,7 @@ ApplicationWindow{
         property real visibility
     }
     FontLoader {name: "FontAwesome";source: "qrc:/fontawesome-webfont.ttf";}
-    Item{
-        id: xApp
-        anchors.fill: parent
-        UnikamView{
-            id:uwss
-            width: 500
-            height: 300
-        }
-    }
-
+    UnikamView{id:uwss}
     /*LogView{
         id:logView
         width: parent.width
