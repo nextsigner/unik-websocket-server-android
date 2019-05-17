@@ -10,17 +10,13 @@ Item {
     property string serverName: 'chatserver'
     property var container: xQmlObjects
     Component.onCompleted:{
-        /*var appArgs = Qt.application.arguments
-        for(var i=0;i<appArgs.length;i++){
-            //console.log('------------------->'+appArgs[i])
-            var arg=''+appArgs[i]
-            if(arg.indexOf('-ip=')===0){
-                var m0=arg.split('=')
-                r.ip=m0[1]
-            }
-        }
-        unik.initWebSocketServer(r.ip, r.port, r.serverName);*/
-        unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
+        unik.startWSS('192.168.200.2', 5500,'chatserver');
+    }
+    Rectangle{
+        width: 100
+        height: 100
+        anchors.centerIn: r
+        color: 'red'
     }
     Item {
         id: xQmlObjects
@@ -38,7 +34,8 @@ Item {
         id:connCW
         //target: cw
         onClientConnected:{
-            console.log("A new client connected.")
+            unik.log("A new client connected.")
+            //console.log("A new client connected.")
         }
     }
     Timer{
@@ -48,13 +45,15 @@ Item {
         onTriggered: {
             if(cw){
                 connCW.target=cw
+                //stop()
             }
-
         }
     }
     Connections {
         target: cs
         onUserListChanged:{
+            unik.log("User List Changed!")
+            //console.log("User List Changed!")
             //listModelUser.updateUserList()
         }
         property int v: 0
