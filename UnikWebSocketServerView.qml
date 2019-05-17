@@ -2,10 +2,13 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 import Qt.WebSockets 1.0
 
-Item {
+Rectangle {
     id: r
+    color: 'yellow'
+    border.width: 4
+    border.color: '#33ff88'
     anchors.fill: parent
-    property string ip: '127.0.0.1'
+    property string ip: '192.168.1.61'
     property int port: 12345
     property string serverName: 'chatserver'
     property var container: xQmlObjects
@@ -22,7 +25,7 @@ Item {
         }
         unik.initWebSocketServer(r.ip, r.port, r.serverName);*/
         //listModelUser.updateUserList()
-        //unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
+        var b=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
     }
     Item {
         id: xQmlObjects
@@ -48,7 +51,6 @@ Item {
                 if(wss){
                     txtStatus.text='WSS'
                     r.connected=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
-
                 }else{
                     txtStatus.text='NO wss'
                 }

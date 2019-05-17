@@ -8,9 +8,10 @@ ApplicationWindow{
 	id:app
     visible:true
     title: moduleName+' by @nextsigner'
-    width: Screen.width/2
-    height: Screen.desktopAvailableHeight-altoBarra
-    color: 'pink'
+    width: 800
+    height: 600
+    visibility: 'FullScreen'
+    color: 'blue'
     property string moduleName: 'unik-websocket-server-android'
     property int altoBarra: 0
     property int fs: appSettings.fs
