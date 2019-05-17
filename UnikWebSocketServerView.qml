@@ -33,31 +33,31 @@ Rectangle {
     }
     Rectangle{
         anchors.fill: r
-        color:'#3355ff'
+        color:'gray'
         //color: r.connected?'red':'green'
     }
-    Text{
-        id: txtStatus
-        text: '????'
-        font.pixelSize: 20
-        color: 'white'
-        width: r.width-10
-        wrapMode: Text.WordWrap
-        anchors.centerIn: r
-        Timer{
-            running: true
-            repeat: true
-            interval: 3000
-            onTriggered: {
-                if(wss){
-                    txtStatus.text='WSS'
-                    //r.connected=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
-                }else{
-                    txtStatus.text='NO wss'
-                }
-            }
-        }
-    }
+//    Text{
+//        id: txtStatus
+//        text: '????'
+//        font.pixelSize: 20
+//        color: 'white'
+//        width: r.width-10
+//        wrapMode: Text.WordWrap
+//        anchors.centerIn: r
+//        Timer{
+//            running: true
+//            repeat: true
+//            interval: 3000
+//            onTriggered: {
+//                if(wss){
+//                    txtStatus.text='WSS'
+//                    //r.connected=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
+//                }else{
+//                    txtStatus.text='NO wss'
+//                }
+//            }
+//        }
+//    }
     /*Connections {
         id:connCWSS
         target: unik
