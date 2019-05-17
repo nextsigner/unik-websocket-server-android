@@ -7,7 +7,7 @@ Rectangle {
     color: 'yellow'
     border.width: 4
     border.color: '#33ff88'
-    anchors.fill: parent
+    //anchors.fill: parent
     property string ip: '192.168.1.61'
     property int port: 12345
     property string serverName: 'chatserver'

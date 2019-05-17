@@ -39,7 +39,11 @@ ApplicationWindow{
     Item{
         id: xApp
         anchors.fill: parent
-        UnikamView{id:uwss}
+        UnikamView{
+            id:uwss
+            width: 500
+            height: 300
+        }
     }
 
     /*LogView{
