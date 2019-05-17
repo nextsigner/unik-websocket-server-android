@@ -20,7 +20,7 @@ Item {
             }
         }
         unik.initWebSocketServer(r.ip, r.port, r.serverName);*/
-        unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
+       // unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
     }
     Item {
         id: xQmlObjects
@@ -59,11 +59,11 @@ Item {
         }
         property int v: 0
         onNewMessage:{
-            unik.debugLog=true
+            //unik.debugLog=true
 
             //unik.log('-------->'+user+':::"'+unik.base64ToByteArray(msg)+'"')
             //unik.setFile('/tmp/wss2.ogg', unik.base64ToByteArray(msg))
-            unik.appendAudioStreamFileWSS('/tmp/streamOutPut--'+v+'.ogg', msg)
+            //unik.appendAudioStreamFileWSS('/tmp/streamOutPut--'+v+'.ogg', msg)
             v++
             return
             /*if((''+msg).substring(0,6).indexOf('audio')>=0){
