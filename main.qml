@@ -10,8 +10,8 @@ ApplicationWindow{
     title: moduleName+' by @nextsigner'
     width: Screen.width/2
     height: Screen.desktopAvailableHeight-altoBarra
-    color: 'black'
-    property string moduleName: 'unikam-server'
+    color: 'pink'
+    property string moduleName: 'unik-websocket-server-android'
     property int altoBarra: 0
     property int fs: appSettings.fs
 
@@ -23,7 +23,7 @@ ApplicationWindow{
     property int uHeight: 0
     Settings{
         id: appSettings
-        category: 'conf-unikast'
+        category: 'conf-'+moduleName
         property int cantRun
         property bool fullScreen
         property bool logViewVisible

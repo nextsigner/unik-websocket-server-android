@@ -9,7 +9,7 @@ Item {
     property int port: 12345
     property string serverName: 'chatserver'
     property var container: xQmlObjects
-    property bool connexted:false
+    property bool connected:false
     Component.onCompleted:{
         /*var appArgs = Qt.application.arguments
         for(var i=0;i<appArgs.length;i++){
@@ -30,10 +30,11 @@ Item {
     }
     Rectangle{
         anchors.fill: r
-        color: r.connexted?'red':'green'
+        color: r.connected?'red':'green'
     }
     Text{
         id: txtStatus
+        text: '????'
         font.pixelSize: 20
         color: 'white'
         width: r.width-10
@@ -45,8 +46,9 @@ Item {
             interval: 3000
             onTriggered: {
                 if(wss){
-                    r.connexted=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
                     txtStatus.text='WSS'
+                    r.connected=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
+
                 }else{
                     txtStatus.text='NO wss'
                 }
