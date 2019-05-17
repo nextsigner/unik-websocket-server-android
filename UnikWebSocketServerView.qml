@@ -25,7 +25,7 @@ Rectangle {
         }
         unik.initWebSocketServer(r.ip, r.port, r.serverName);*/
         //listModelUser.updateUserList()
-        var b=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
+        //var b=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
     }
     Item {
         id: xQmlObjects
@@ -33,7 +33,8 @@ Rectangle {
     }
     Rectangle{
         anchors.fill: r
-        color: r.connected?'red':'green'
+        color:'#3355ff'
+        //color: r.connected?'red':'green'
     }
     Text{
         id: txtStatus
@@ -50,7 +51,7 @@ Rectangle {
             onTriggered: {
                 if(wss){
                     txtStatus.text='WSS'
-                    r.connected=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
+                    //r.connected=unik.startWSS(wss, '192.168.1.61', 12345,'chatserver');
                 }else{
                     txtStatus.text='NO wss'
                 }
