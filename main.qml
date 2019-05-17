@@ -11,7 +11,7 @@ ApplicationWindow{
     width: 800
     height: 600
     visibility: 'FullScreen'
-    color: '#ff2233'
+    color: '#332233'
     property string moduleName: 'unik-websocket-server-android'
     property int altoBarra: 0
     property int fs: appSettings.fs
@@ -66,12 +66,6 @@ ApplicationWindow{
         if(appSettings.fs<=0){
             appSettings.fs=20
         }
-        appSettings.logViewVisible=true
-
-        if(Qt.platform.os==='windows'){
-            var anchoBorde=(app.width-unik.frameWidth(app))/2
-            var altoBarraTitulo=unik.frameHeight(app)-height
-            app.altoBarra=height-(Screen.desktopAvailableHeight-altoBarraTitulo)
-        }
+        //appSettings.logViewVisible=true
     }
 }
