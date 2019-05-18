@@ -37,6 +37,7 @@ ApplicationWindow{
     }
     FontLoader {name: "FontAwesome";source: "qrc:/fontawesome-webfont.ttf";}
     UnikamView{id:uwss}
+    UnikamWssConn{}
     /*LogView{
         id:logView
         width: parent.width
