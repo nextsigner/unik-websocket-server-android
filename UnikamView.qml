@@ -17,6 +17,10 @@ Item {
         anchors.fill: r
     }
     Image{
+        id: i3
+        anchors.centerIn: r
+    }
+    Image{
         id: i1
         anchors.centerIn: r
     }
@@ -64,12 +68,13 @@ Item {
                 unik.log('-------->'+(''+msg).substring(5, (''+msg).length-2))
                 return
             }*/
+            i3.source="data:image/png;base64,"+msg
             if(i1.z<i2.z){
                 i2.source="data:image/png;base64,"+msg
-                //i1.z++
+                i1.z++
             }else{
                 i1.source="data:image/png;base64,"+msg
-                //i2.z++
+                i2.z++
             }
             /*console.log('A new message: '+user+' say: '+msg)
             var obj = Qt.createQmlObject(msg, r.container, 'unikastcode')
