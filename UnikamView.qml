@@ -18,14 +18,14 @@ Item {
         id: xQmlObjects
         anchors.fill: r
     }
-    Image{
+    /*Image{
         id: i3
         anchors.centerIn: r
     }
     Image{
         id: i2
         anchors.centerIn: r
-    }
+    }*/
     Image{
         id: i1
         anchors.centerIn: r
@@ -72,7 +72,8 @@ Item {
                 unik.log('-------->'+(''+msg).substring(5, (''+msg).length-2))
                 return
             }*/
-            if(r.u===1){
+            i1.source="data:image/png;base64,"+msg
+            /*if(r.u===1){
                 i2.source="data:image/png;base64,"+msg
                 i2.z++
             }else if(r.u===2){
@@ -81,7 +82,7 @@ Item {
             }else{
                 i1.source="data:image/png;base64,"+msg
                 i1.z++
-            }
+            }*/
             /*console.log('A new message: '+user+' say: '+msg)
             var obj = Qt.createQmlObject(msg, r.container, 'unikastcode')
             if(app){
