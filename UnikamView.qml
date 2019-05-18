@@ -9,29 +9,21 @@ Item {
     property int port: 12345
     property string serverName: 'chatserver'
     property var container: xQmlObjects
-    property int u: 1
     Component.onCompleted:{
         unik.startWSS('192.168.200.2', 5500,'chatserver');
     }
-
     Item {
         id: xQmlObjects
         anchors.fill: r
     }
-    /*Image{
-        id: i3
+    Image{
+        id: i1
         anchors.centerIn: r
     }
     Image{
         id: i2
         anchors.centerIn: r
-    }*/
-    Image{
-        id: i1
-        anchors.centerIn: r
     }
-
-
     Connections {
         id:connCW
         //target: cw
@@ -72,17 +64,13 @@ Item {
                 unik.log('-------->'+(''+msg).substring(5, (''+msg).length-2))
                 return
             }*/
-            i1.source="data:image/png;base64,"+msg
-            /*if(r.u===1){
+            if(i1.z<i2.z){
                 i2.source="data:image/png;base64,"+msg
-                i2.z++
-            }else if(r.u===2){
-                i3.source="data:image/png;base64,"+msg
-                i3.z++
+                //i1.z++
             }else{
                 i1.source="data:image/png;base64,"+msg
-                i1.z++
-            }*/
+                //i2.z++
+            }
             /*console.log('A new message: '+user+' say: '+msg)
             var obj = Qt.createQmlObject(msg, r.container, 'unikastcode')
             if(app){
