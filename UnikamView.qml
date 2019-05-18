@@ -23,10 +23,20 @@ Item {
     Image{
         id: i1
         anchors.centerIn: r
+        onProgressChanged: {
+            if(progress===1.0){
+                opacity=1.0
+            }
+        }
     }
     Image{
         id: i2
         anchors.centerIn: r
+        onProgressChanged: {
+            if(progress===1.0){
+                opacity=1.0
+            }
+        }
     }
     Connections {
         id:connCW
@@ -70,9 +80,11 @@ Item {
             }*/
             i3.source="data:image/png;base64,"+msg
             if(i1.z<i2.z){
+                i2.opacity=0.0
                 i2.source="data:image/png;base64,"+msg
                 i1.z++
             }else{
+                i1.opacity=0.0
                 i1.source="data:image/png;base64,"+msg
                 i2.z++
             }
